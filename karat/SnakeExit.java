@@ -102,20 +102,23 @@ public class SnakeExit {
         int[] start5_2 = {3, 1}; // Expected output = (0, 1)
 
 
-        ShortestDistance exit = find_exit(board3, start3_1);
+        ShortestDistance exit = find_exit(board3, start3_2);
 
         System.out.println(exit);
 
     }
 
     private static ShortestDistance find_exit(char[][] board, int[] start) {
+        // for putting values to iterate
         Deque<int[]> queue = new ArrayDeque<>();
         queue.push(start);
 
+        // set all distances to large values, so we can track undiscovered paths
         int[][] distances = new int[board.length][board[0].length];
         Arrays.stream(distances).forEach(v -> Arrays.fill(v, Integer.MAX_VALUE));
         distances[start[0]][start[1]] = 0;
 
+        // for iteration left, right, up, down
         int[][] directions = new int[][]{
                 {1, 0},
                 {0, 1},

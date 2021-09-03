@@ -1,6 +1,6 @@
-package twonumbers;
+package fastandslowpointers.addTwoNumbers;
 
-class ListNode {
+public class ListNode {
     int val;
     ListNode next;
 

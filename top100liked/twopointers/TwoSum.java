@@ -1,9 +1,9 @@
-package twosum;
+package twopointers;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution {
+public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
         double powerOfMinusNine = Math.pow(10, -9);
         double powerOfNine = Math.pow(10, 9);

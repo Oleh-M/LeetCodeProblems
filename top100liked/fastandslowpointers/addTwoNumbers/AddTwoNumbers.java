@@ -1,6 +1,6 @@
-package twonumbers;
+package fastandslowpointers.addTwoNumbers;
 
-public class IterativeSolution {
+public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int carry = 0;
 

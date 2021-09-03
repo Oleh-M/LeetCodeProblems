@@ -1,9 +1,9 @@
-package singlenumber;
+package arrays;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Solution {
+public class SingleNumber {
     public static void main(String[] args) {
 
     }

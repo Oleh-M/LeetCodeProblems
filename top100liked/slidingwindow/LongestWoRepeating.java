@@ -1,4 +1,4 @@
-package longestsubstr;
+package slidingwindow;
 
 /*
 Given a string s, find the length of the longest substring without repeating characters.
@@ -36,7 +36,7 @@ Constraints:
 import java.util.HashSet;
 import java.util.Set;
 
-public class Solution {
+public class LongestWoRepeating {
     public static void main(String[] args) {
         System.out.println(lengthOfLongestSubstring("aab")); // 2
         System.out.println(lengthOfLongestSubstring("abcabcbb")); // 3

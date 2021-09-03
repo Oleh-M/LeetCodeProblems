@@ -1,4 +1,4 @@
-package twonumbers;
+package fastandslowpointers.addTwoNumbers;
 
 /**
  * Definition for singly-linked list.

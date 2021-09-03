@@ -1,6 +1,6 @@
-package climbingstairs;
+package dynamicprogramming;
 
-public class Solution {
+public class ClimbingStairs {
     public static void main(String[] args) {
         System.out.println(climbStairs(5));
     }

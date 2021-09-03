@@ -1,6 +1,6 @@
-package longestpalindrome;
+package dynamicprogramming;
 
-public class Solution {
+public class LongestPalindrome {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("ac"));
         System.out.println(longestPalindrome("babad"));

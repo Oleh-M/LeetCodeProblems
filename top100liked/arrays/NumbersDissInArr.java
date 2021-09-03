@@ -1,10 +1,10 @@
-package numbersdisappeared;
+package arrays;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Solution {
+public class NumbersDissInArr {
     public static void main(String[] args) {
 
     }

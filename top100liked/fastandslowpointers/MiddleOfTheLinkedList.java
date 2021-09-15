@@ -1,5 +1,7 @@
 package fastandslowpointers;
 
+import fastandslowpointers.addTwoNumbers.ListNode;
+
 public class MiddleOfTheLinkedList {
 
     public static void main(String[] args) {

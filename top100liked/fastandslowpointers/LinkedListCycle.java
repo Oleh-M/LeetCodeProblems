@@ -1,5 +1,7 @@
 package fastandslowpointers;
 
+import fastandslowpointers.addTwoNumbers.ListNode;
+
 import java.util.*;
 
 public class LinkedListCycle {
@@ -22,28 +24,5 @@ public class LinkedListCycle {
         }
 
         return false;
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-
-    ListNode(int x, ListNode next) {
-        this.val = x;
-        this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
     }
 }

@@ -6,6 +6,7 @@ import java.util.*;
 
 public class LevelOrderTraversal {
     public static List<List<Integer>> traverse(TreeNode root) {
+        if(root == null) return Collections.emptyList();
         List<List<Integer>> result = new ArrayList<>();
         Queue<TreeNode> nodes = new LinkedList<>();
         nodes.offer(root);

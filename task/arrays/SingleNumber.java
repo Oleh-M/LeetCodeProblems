@@ -12,7 +12,7 @@ public class SingleNumber {
         Set<Integer> result = new HashSet<>();
 
         for (int num : nums) {
-            if(!result.contains(num)) {
+            if (!result.contains(num)) {
                 result.add(num);
             } else result.remove(num);
         }

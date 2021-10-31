@@ -8,11 +8,11 @@ public class AddTwoNumbers {
         prev = holder;
 
         while (l1 != null || l2 != null || carry != 0) {
-            if(l1 != null) {
+            if (l1 != null) {
                 carry += l1.val;
                 l1 = l1.next;
             }
-            if(l2 != null) {
+            if (l2 != null) {
                 carry += l2.val;
                 l2 = l2.next;
             }

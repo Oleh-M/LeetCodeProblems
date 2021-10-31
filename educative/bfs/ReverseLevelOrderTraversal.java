@@ -14,7 +14,7 @@ class ReverseLevelOrderTraversal {
         nodes.offer(root);
 
         TreeNode currNode;
-        while(!nodes.isEmpty()) {
+        while (!nodes.isEmpty()) {
             int nodesSize = nodes.size();
             List<Integer> nestedList = new ArrayList<>(nodesSize);
 
@@ -23,7 +23,7 @@ class ReverseLevelOrderTraversal {
                 if (currNode != null) nestedList.add(currNode.val);
                 else continue;
 
-                if(currNode.left != null) nodes.offer(currNode.left);
+                if (currNode.left != null) nodes.offer(currNode.left);
                 if (currNode.right != null) nodes.offer(currNode.right);
             }
 

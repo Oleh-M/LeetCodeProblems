@@ -54,7 +54,7 @@ public class LongestWoRepeating {
         int i = 0;
         int longest = 0;
         int j = 0;
-        while(j < s.length()) {
+        while (j < s.length()) {
             if (!resSet.contains(s.charAt(j))) {
                 resSet.add(s.charAt(j));
                 j++;

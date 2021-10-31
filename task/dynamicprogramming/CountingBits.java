@@ -9,7 +9,7 @@ public class CountingBits {
     }
 
     public static int[] countBits(int n) {
-        if(n == 0) return new int[] {0};
+        if (n == 0) return new int[]{0};
 
         int[] result = new int[n + 1];
         int offset = 1;

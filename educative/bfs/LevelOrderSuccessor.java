@@ -16,7 +16,7 @@ public class LevelOrderSuccessor {
             if (currentNode.left != null) nodes.offer(currentNode.left);
             if (currentNode.right != null) nodes.offer(currentNode.right);
 
-            if(currentNode.val == key) break;
+            if (currentNode.val == key) break;
         }
 
         return nodes.poll();

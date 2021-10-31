@@ -18,8 +18,7 @@ public class Sqrt {
             pow = mid * mid;
             if (pow == x) {
                 return Double.valueOf(mid).intValue();
-            }
-            else if (pow > x) right = mid;
+            } else if (pow > x) right = mid;
             else left = mid + 1;
         }
 

@@ -2,8 +2,6 @@ package fastandslowpointers;
 
 import fastandslowpointers.addTwoNumbers.ListNode;
 
-import java.util.*;
-
 public class LinkedListCycle {
 
     public static void main(String[] args) {
@@ -15,7 +13,7 @@ public class LinkedListCycle {
     public static boolean hasCycle(ListNode head) {
         ListNode slow = head, fast = head;
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
             if (fast == slow) {

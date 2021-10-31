@@ -1,8 +1,7 @@
 package medianoftwoarr;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 /*
 Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
@@ -53,11 +52,11 @@ Constraints:
 */
 class Solution {
     public static void main(String[] args) {
-        findMedianSortedArrays(new int[] {1, 2, 3, 4, 5}, new int[] {7,8,9,0,-1});
+        findMedianSortedArrays(new int[]{1, 2, 3, 4, 5}, new int[]{7, 8, 9, 0, -1});
     }
 
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        if(nums1.length == 0 && nums2.length == 0) return 0;
+        if (nums1.length == 0 && nums2.length == 0) return 0;
 
         Queue<Integer> pq = new PriorityQueue<>(nums1.length + nums2.length);
 

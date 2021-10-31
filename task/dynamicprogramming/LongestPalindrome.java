@@ -15,7 +15,8 @@ public class LongestPalindrome {
         char[] symbols = s.toCharArray();
         int l, r;
         for (int i = 0; i < s.length(); i++) {
-            l = i; r = i;
+            l = i;
+            r = i;
 
             // odd length
             while (l >= 0 && r < symbols.length && symbols[l] == symbols[r]) {
@@ -28,7 +29,8 @@ public class LongestPalindrome {
             }
 
             // even length
-            l = i; r = i + 1;
+            l = i;
+            r = i + 1;
             while (l >= 0 && r < symbols.length && symbols[l] == symbols[r]) {
                 if ((r - l + 1) > resLength) {
                     res = s.substring(l, r + 1);

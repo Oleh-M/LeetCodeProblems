@@ -22,7 +22,7 @@ public class RemoveNthNodeFromTheEnd {
         pointer = head;
         while (pointer != null) {
             if (counter-- == n) {
-                if(pointer == head) {
+                if (pointer == head) {
                     head = pointer.next;
                 } else {
                     prev.next = pointer.next;

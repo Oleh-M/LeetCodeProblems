@@ -143,7 +143,7 @@ class MyLinkedList {
         MyLinkedList lastTest = new MyLinkedList();
         lastTest.addAtHead(86);
         lastTest.addAtIndex(1, 54);
-        lastTest.addAtIndex(1,14);
+        lastTest.addAtIndex(1, 14);
         lastTest.addAtHead(83);
         lastTest.deleteAtIndex(4);
         lastTest.addAtIndex(3, 18);

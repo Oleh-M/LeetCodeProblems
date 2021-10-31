@@ -1,8 +1,9 @@
 package arrays;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class NumbersDissInArr {
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class NumbersDissInArr {
         return new ArrayList<>(numbersIndexSet);
     }
 
-    public static List<Integer> findDisappearedNumbers2 (int[] nums) {
+    public static List<Integer> findDisappearedNumbers2(int[] nums) {
         List<Integer> missingNums = new ArrayList<>();
         Set<Integer> numbers = new HashSet<>(nums.length);
 
@@ -32,7 +33,7 @@ public class NumbersDissInArr {
         }
 
         for (int i = 1; i <= nums.length; i++) {
-            if(!numbers.contains(i)) {
+            if (!numbers.contains(i)) {
                 missingNums.add(i);
             }
         }

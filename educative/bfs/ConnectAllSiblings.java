@@ -33,7 +33,9 @@ public class ConnectAllSiblings {
             val = x;
             left = right = next = null;
         }
-    };
+    }
+
+    ;
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(12);

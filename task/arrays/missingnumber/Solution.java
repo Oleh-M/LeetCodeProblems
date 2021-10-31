@@ -8,8 +8,8 @@ Follow up: Could you implement a solution using only O(1) extra space complexity
  and O(n) runtime complexity?
  */
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Solution {
     public static void main(String[] args) {

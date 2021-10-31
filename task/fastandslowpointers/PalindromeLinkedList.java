@@ -24,7 +24,7 @@ public class PalindromeLinkedList {
 
         // reverse the second half
         ListNode prev = null, tmp;
-        while(slow != null) {
+        while (slow != null) {
             tmp = slow.next;
             slow.next = prev;
             prev = slow;
@@ -35,7 +35,7 @@ public class PalindromeLinkedList {
         fast = head;
         slow = prev;
         while (slow != null) {
-            if(fast.val != slow.val) {
+            if (fast.val != slow.val) {
                 return false;
             }
             fast = fast.next;
@@ -48,13 +48,13 @@ public class PalindromeLinkedList {
     public static boolean isPalindrome1(ListNode head) {
         List<Integer> nodes = new ArrayList<>();
 
-        while(head != null) {
+        while (head != null) {
             nodes.add(head.val);
             head = head.next;
         }
 
         for (int i = 0, j = nodes.size() - 1; i < nodes.size() / 2 || j > nodes.size() / 2; i++, j--) {
-            if(!Objects.equals(nodes.get(i), nodes.get(j))) {
+            if (!Objects.equals(nodes.get(i), nodes.get(j))) {
                 return false;
             }
         }

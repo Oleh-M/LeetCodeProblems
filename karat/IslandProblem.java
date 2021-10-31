@@ -1,11 +1,11 @@
 public class IslandProblem {
 
     public static void main(String[] args) {
-        char[][] M = new char[][]{{'1','1','0','0','0'},
-                                  {'1','1','0','0','0'},
-                                  {'0','0','1','0','0'},
-                                  {'0','0','0','1','1'},
-                                  };
+        char[][] M = new char[][]{{'1', '1', '0', '0', '0'},
+                {'1', '1', '0', '0', '0'},
+                {'0', '0', '1', '0', '0'},
+                {'0', '0', '0', '1', '1'},
+        };
 
         int t = numIslands(M);
         System.out.println(t);
@@ -29,9 +29,9 @@ public class IslandProblem {
             return;
         }
         grid[row][col] = '#';
-        dfs(grid, row+1, col); // down
-        dfs(grid, row-1, col); // up
-        dfs(grid, row, col+1); // right
-        dfs(grid, row, col-1); // left
+        dfs(grid, row + 1, col); // down
+        dfs(grid, row - 1, col); // up
+        dfs(grid, row, col + 1); // right
+        dfs(grid, row, col - 1); // left
     }
 }

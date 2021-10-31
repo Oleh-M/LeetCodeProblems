@@ -42,7 +42,6 @@ find_exit(board_5, start_5_2) => (0, 1)
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.List;
 
 public class SnakeExit {
 

@@ -2,8 +2,6 @@ package inplacereversal;
 
 import fastandslowpointers.addTwoNumbers.ListNode;
 
-import java.util.List;
-
 public class MergeTwoSortedLists {
 
     public static void main(String[] args) {

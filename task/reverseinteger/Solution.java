@@ -13,7 +13,7 @@ public class Solution {
     public static int reverse(int x) {
         char[] strNum = String.valueOf(x).toCharArray();
 
-        if(strNum.length == 1) return  x;
+        if (strNum.length == 1) return x;
 
         int result = 0;
         int digit;

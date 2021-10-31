@@ -14,17 +14,16 @@ public class FirstBadVersion {
 
         while (left < right) {
             mid = left + (right - left) / 2;
-            if(isBadVersion(mid)) {
+            if (isBadVersion(mid)) {
                 right = mid;
-            }
-            else {
+            } else {
                 left = mid + 1;
             }
         }
 
         // Post-processing:
         // End Condition: left == right
-        if(isBadVersion(left)) return left;
+        if (isBadVersion(left)) return left;
 
         return -1;
     }

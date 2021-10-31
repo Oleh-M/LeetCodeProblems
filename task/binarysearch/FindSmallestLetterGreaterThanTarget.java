@@ -23,7 +23,7 @@ public class FindSmallestLetterGreaterThanTarget {
             }
         }
 
-        if(left != letters.length && letters[left] > target) return letters[left];
+        if (left != letters.length && letters[left] > target) return letters[left];
 
         return smallest;
     }

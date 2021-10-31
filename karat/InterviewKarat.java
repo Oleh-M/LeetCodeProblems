@@ -48,19 +48,21 @@ w = length of the word
  */
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class InterviewKarat {
 
     public static void main(String[] args) {
-        char[][] grid1 = new char [][] {
-            {'c', 'c', 'x', 't', 'i', 'b'},
-            {'c', 'c', 'a', 't', 'n', 'i'},
-            {'a', 'c', 'n', 'n', 't', 't'},
-            {'t', 'c', 's', 'i', 'p', 't'},
-            {'a', 'o', 'o', 'o', 'a', 'a'},
-            {'o', 'a', 'a', 'a', 'o', 'o'},
-            {'k', 'a', 'i', 'c', 'k', 'i'}
+        char[][] grid1 = new char[][]{
+                {'c', 'c', 'x', 't', 'i', 'b'},
+                {'c', 'c', 'a', 't', 'n', 'i'},
+                {'a', 'c', 'n', 'n', 't', 't'},
+                {'t', 'c', 's', 'i', 'p', 't'},
+                {'a', 'o', 'o', 'o', 'a', 'a'},
+                {'o', 'a', 'a', 'a', 'o', 'o'},
+                {'k', 'a', 'i', 'c', 'k', 'i'}
         };
 
         String word1 = "catnip";
@@ -75,7 +77,7 @@ public class InterviewKarat {
         find_word_location(grid1, word1);
     }
 
-    static int[][] iteration = new int[][] {
+    static int[][] iteration = new int[][]{
             {1, 0},
             {0, 1}
     };
@@ -88,19 +90,19 @@ public class InterviewKarat {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == word.charAt(letterCounter) && pos.isEmpty()) {
-                    pos.add(new int[] {i, j});
+                    pos.add(new int[]{i, j});
                     res.add(Arrays.asList(i, j));
                     letterCounter++;
                 } else if (grid[i][j] == word.charAt(letterCounter) && !pos.isEmpty()
                         && letterCounter != 0
                         && ((pos.get(letterCounter - 1)[0] == i + 1 && pos.get(letterCounter - 1)[1] == j)
-                || (pos.get(letterCounter - 1)[0] == i && pos.get(letterCounter - 1)[1] == j + 1))) {
+                        || (pos.get(letterCounter - 1)[0] == i && pos.get(letterCounter - 1)[1] == j + 1))) {
                     res.add(Arrays.asList(i, j));
-                    pos.add(new int[] {i, j});
+                    pos.add(new int[]{i, j});
                     letterCounter++;
                 } else {
                     pos.remove(letterCounter - 1);
-                    if(letterCounter != 0) letterCounter--;
+                    if (letterCounter != 0) letterCounter--;
                 }
             }
         }

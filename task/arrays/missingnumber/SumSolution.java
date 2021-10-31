@@ -2,7 +2,7 @@ package missingnumber;
 
 public class SumSolution {
     public static void main(String[] args) {
-        missingNumber(new int[] {0,2,1,4});
+        missingNumber(new int[]{0, 2, 1, 4});
     }
 
     public static int missingNumber(int[] nums) {

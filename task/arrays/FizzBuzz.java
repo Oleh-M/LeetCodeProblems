@@ -14,7 +14,7 @@ public class FizzBuzz {
         List<String> res = new ArrayList<>(n);
 
         for (int i = 1; i <= n; i++) {
-            if(i % 3 == 0 && i % 5 == 0) {
+            if (i % 3 == 0 && i % 5 == 0) {
                 res.add("FizzBuzz");
             } else if (i % 3 == 0) {
                 res.add("Fizz");

@@ -3,13 +3,13 @@ import java.util.Arrays;
 public class Sorting {
 
     public static void main(String[] args) {
-        int[] actual = { 5, 1, 6, 2, 3, 4 };
+        int[] actual = {5, 1, 6, 2, 3, 4};
 
         mergeSort(actual, actual.length);
 
         System.out.println(Arrays.toString(actual));
 
-        int[] ac = { 5, 1, 6, 2, 3, 4 };
+        int[] ac = {5, 1, 6, 2, 3, 4};
 
         quickSort(ac, 0, ac.length - 1);
 
@@ -68,7 +68,7 @@ public class Sorting {
         int i = left - 1;
 
         for (int j = left; j < right; j++) {
-            if(arr[j] <= pivot) {
+            if (arr[j] <= pivot) {
                 i++;
 
                 int swapTemp = arr[i];
@@ -77,8 +77,8 @@ public class Sorting {
             }
         }
 
-        int swapTemp = arr[i+1];
-        arr[i+1] = arr[right];
+        int swapTemp = arr[i + 1];
+        arr[i + 1] = arr[right];
         arr[right] = swapTemp;
 
         return i + 1;

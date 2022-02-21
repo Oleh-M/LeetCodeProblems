@@ -23,7 +23,7 @@ public class ThreeSum {
                 else {
                     resultLists.add(List.of(nums[i], nums[l], nums[r]));
                     l++;
-                    while (nums[l] == nums[i - 1] && l < r)
+                    while (l < r && nums[l] == nums[l - 1])
                         l++;
                 }
             }

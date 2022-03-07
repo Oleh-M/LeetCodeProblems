@@ -8,16 +8,18 @@ public class Stock {
     }
 
     public static int maxProfit(int[] prices) {
-        int left = 0;
-        int right = 1;
-        int maxProfit = 0;
+        int left = 0,
+                right = 1,
+                currentProfit = 0;
 
         while (right < prices.length) {
-            if (prices[right] > prices[left]) {
-                maxProfit = Math.max(maxProfit, prices[right] - prices[left]);
-            } else left = right;
+            currentProfit = Math.max(currentProfit, prices[right] - prices[left]);
+            if (prices[left] > prices[right]) {
+                left = right;
+            }
             right++;
         }
-        return maxProfit;
+
+        return currentProfit;
     }
 }

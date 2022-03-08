@@ -11,13 +11,13 @@ public class MaxSubArray {
 
     public static int maxSubArray(int[] nums) {
         if (nums.length == 1) return nums[0];
-        int currentSum = 0, longestSum = nums[0];
 
-        for (int num : nums) {
-            if (currentSum < 0) {
-                currentSum = 0;
-            }
-            currentSum += num;
+        int currentSum = 0,
+                longestSum = nums[0];
+
+        for (int i : nums) {
+            if (currentSum < 0) currentSum = 0;
+            currentSum += i;
             longestSum = Math.max(longestSum, currentSum);
         }
 

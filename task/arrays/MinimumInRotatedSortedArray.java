@@ -2,15 +2,16 @@ package arrays;
 
 public class MinimumInRotatedSortedArray {
     public static int findMin(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
-        int min = nums[0];
+        int left = 0,
+                right = nums.length - 1,
+                min = nums[0];
 
         while (left != right) {
             min = Math.min(nums[left], nums[right]);
-            if (nums[left] <= nums[right]) {
-                right--;
-            } else left++;
+
+            if (nums[left] > nums[right]) {
+                left++;
+            } else right--;
         }
 
         return min;

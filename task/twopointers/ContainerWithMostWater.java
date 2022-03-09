@@ -2,16 +2,17 @@ package twopointers;
 
 public class ContainerWithMostWater {
     public static int maxArea(int[] height) {
-        int start = 0,
-                end = height.length - 1,
-                maxSum = 0;
-        while (start != end) {
-            maxSum = Math.max(Math.min(height[start], height[end]) * (end - start), maxSum);
-            if (height[start] < height[end]) start++;
-            else end--;
+        int left = 0,
+                right = height.length - 1,
+                max = 0;
+
+        while (left != right) {
+            max = Math.max(max, Math.min(height[left], height[right]) * (right - left));
+            if (height[left] < height[right]) left++;
+            else right--;
         }
 
-        return maxSum;
+        return max;
     }
 
     public static void main(String[] args) {

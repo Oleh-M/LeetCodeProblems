@@ -4,7 +4,7 @@ public class MaxProductSubArray {
 
     public static int maxProduct(int[] nums) {
         if (nums.length == 1) return nums[0];
-        int max = nums[0],
+        int maxProduct = nums[0],
                 currentMax = 1,
                 currentMin = 1;
 
@@ -13,15 +13,14 @@ public class MaxProductSubArray {
                 currentMax = 1;
                 currentMin = 1;
             }
-
-            int tmp = currentMax * i;
+            var tmp = currentMax * i;
             currentMax = Math.max(tmp, Math.max(currentMin * i, i));
             currentMin = Math.min(tmp, Math.min(currentMin * i, i));
 
-            max = Math.max(max, Math.max(currentMax, currentMin));
+            maxProduct = Math.max(maxProduct, Math.max(currentMax, currentMin));
         }
 
-        return max;
+        return maxProduct;
     }
 
     public static void main(String[] args) {

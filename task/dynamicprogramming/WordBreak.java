@@ -6,9 +6,10 @@ public class WordBreak {
     public static boolean wordBreak(String s, List<String> wordDict) {
         boolean[] dp = new boolean[s.length() + 1];
         dp[s.length()] = true;
+
         for (int i = dp.length - 1; i >= 0; i--) {
             for (String word : wordDict) {
-                if (i + word.length() <= s.length() && s.startsWith(word, i)) {
+                if (s.length() >= i + word.length() && s.startsWith(word, i)) {
                     dp[i] = dp[i + word.length()];
                 }
 

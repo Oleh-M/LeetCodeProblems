@@ -8,7 +8,9 @@ public class CombinationSum4 {
 
         for (int i = 1; i <= target; i++) {
             for (int num : nums) {
-                if (num <= i) dp[i] += dp[i - num];
+                if (num <= i) {
+                    dp[i] += dp[i - num];
+                }
             }
         }
 

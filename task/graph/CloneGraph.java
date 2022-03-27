@@ -27,22 +27,21 @@ public class CloneGraph {
         if (node == null) return null;
 
         var newNode = new Node(node.val);
-        var resMap = new HashMap<Integer, Node>();
-        resMap.put(newNode.val, newNode);
+        var map = new HashMap<Integer, Node>();
+        map.put(newNode.val, newNode);
 
         Queue<Node> nodes = new LinkedList<>();
         nodes.add(node);
         while (!nodes.isEmpty()) {
             var currNode = nodes.poll();
             for (Node neighbor : currNode.neighbors) {
-
-                if (!resMap.containsKey(neighbor.val)) {
-                    resMap.put(neighbor.val, new Node(neighbor.val));
+                if (!map.containsKey(neighbor.val)) {
+                    map.put(neighbor.val, new Node(neighbor.val));
                     nodes.add(neighbor);
                 }
-                resMap.get(currNode.val).neighbors.add(resMap.get(neighbor.val));
+                map.get(currNode.val)
+                        .neighbors.add(map.get(neighbor.val)); // adding neighbours for current node
             }
-
         }
 
         return newNode;

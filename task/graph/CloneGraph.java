@@ -1,27 +1,10 @@
 package graph;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class CloneGraph {
-    static class Node {
-        public int val;
-        public List<Node> neighbors;
-
-        public Node() {
-            val = 0;
-            neighbors = new ArrayList<>();
-        }
-
-        public Node(int _val) {
-            val = _val;
-            neighbors = new ArrayList<>();
-        }
-
-        public Node(int _val, List<Node> _neighbors) {
-            val = _val;
-            neighbors = _neighbors;
-        }
-    }
 
     public static Node cloneGraph(Node node) {
         if (node == null) return null;

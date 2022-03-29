@@ -21,27 +21,27 @@ public class CourseSchedule {
         var visited = new int[numCourses];
 
         for (int i = 0; i < numCourses; i++) {
-            if (!dfs(courses, visited, i)) return false;
+            if (checkCourses(courses, visited, i)) return false;
         }
 
         return true;
     }
 
-    private static boolean dfs(List<List<Integer>> courses, int[] visited, int course) {
+    private static boolean checkCourses(List<List<Integer>> courses, int[] visited, int course) {
         visited[course] = 1;
 
         var eligibleCourses = courses.get(course);
 
         for (Integer eligibleCourse : eligibleCourses) {
-            if (visited[eligibleCourse] == 1) return false;
+            if (visited[eligibleCourse] == 1) return true;
             if (visited[eligibleCourse] == 0) {
-                if (!dfs(courses, visited, eligibleCourse)) return false;
+                if (checkCourses(courses, visited, eligibleCourse)) return true;
             }
         }
 
         visited[course] = 2;
 
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {

@@ -5,8 +5,8 @@ import java.util.List;
 
 public class PacificAtlanticWaterFlow {
     public static List<List<Integer>> pacificAtlantic(int[][] heights) {
-        int row = heights.length;
-        int col = heights[0].length;
+        var row = heights.length;
+        var col = heights[0].length;
 
         var pacific = new boolean[row][col];
         var atlantic = new boolean[row][col];
@@ -33,12 +33,10 @@ public class PacificAtlanticWaterFlow {
         }
 
         return result;
-
     }
 
     public static void dfs(int[][] heights,
-                           int r,
-                           int c,
+                           int r, int c,
                            int prevHeight,
                            boolean[][] visited) {
         if (r < 0 || c < 0
@@ -46,8 +44,8 @@ public class PacificAtlanticWaterFlow {
                 || c >= heights[0].length
                 || prevHeight > heights[r][c]
                 || visited[r][c]) return;
-        visited[r][c] = true;
 
+        visited[r][c] = true;
         dfs(heights, r - 1, c, heights[r][c], visited);
         dfs(heights, r + 1, c, heights[r][c], visited);
         dfs(heights, r, c - 1, heights[r][c], visited);

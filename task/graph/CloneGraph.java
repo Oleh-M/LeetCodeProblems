@@ -9,24 +9,26 @@ public class CloneGraph {
     public static Node cloneGraph(Node node) {
         if (node == null) return null;
 
-        var newNode = new Node(node.val);
+        var clone = new Node(node.val);
+        Queue<Node> queue = new LinkedList<>();
         var map = new HashMap<Integer, Node>();
-        map.put(newNode.val, newNode);
+        map.put(clone.val, clone);
 
-        Queue<Node> nodes = new LinkedList<>();
-        nodes.add(node);
-        while (!nodes.isEmpty()) {
-            var currNode = nodes.poll();
-            for (Node neighbor : currNode.neighbors) {
+        queue.add(node);
+
+        while (!queue.isEmpty()) {
+            var currentNode = queue.poll();
+            for (Node neighbor : currentNode.neighbors) {
                 if (!map.containsKey(neighbor.val)) {
+                    queue.add(neighbor);
                     map.put(neighbor.val, new Node(neighbor.val));
-                    nodes.add(neighbor);
                 }
-                map.get(currNode.val)
-                        .neighbors.add(map.get(neighbor.val)); // adding neighbours for current node
+
+                map.get(currentNode.val)
+                        .neighbors.add(map.get(neighbor.val));
             }
         }
 
-        return newNode;
+        return clone;
     }
 }

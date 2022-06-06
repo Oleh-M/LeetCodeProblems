@@ -5,43 +5,43 @@ import java.util.List;
 
 public class CourseSchedule {
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
-        if (numCourses == 0 || prerequisites.length == 0) return true;
-
-        // create the array lists to represent the courses
-        var courses = new ArrayList<List<Integer>>(numCourses);
+        var courses = new ArrayList<List<Integer>>();
 
         for (int i = 0; i < numCourses; i++) {
             courses.add(new ArrayList<>(2));
         }
-        // create the dependency for courses
+
         for (int[] prerequisite : prerequisites) {
             courses.get(prerequisite[1]).add(prerequisite[0]);
         }
 
-        var visited = new int[numCourses];
-
+        var visited = new boolean[numCourses];
+        var memo = new boolean[numCourses];
         for (int i = 0; i < numCourses; i++) {
-            if (checkCourses(courses, visited, i)) return false;
+            if (!dfs(courses, visited, memo, i)) {
+                return false;
+            }
         }
 
         return true;
     }
 
-    private static boolean checkCourses(List<List<Integer>> courses, int[] visited, int course) {
-        visited[course] = 1;
+    public static boolean dfs(List<List<Integer>> courses, boolean[] visited, boolean[] memo, int course) {
+        if (visited[course]) return false;
+        if (memo[course]) return true;
 
-        var eligibleCourses = courses.get(course);
+        visited[course] = true;
 
-        for (Integer eligibleCourse : eligibleCourses) {
-            if (visited[eligibleCourse] == 1) return true;
-            if (visited[eligibleCourse] == 0) {
-                if (checkCourses(courses, visited, eligibleCourse)) return true;
+        for (int i = 0; i < courses.get(course).size(); i++) {
+            if (!dfs(courses, visited, memo, courses.get(course).get(i))) {
+                return false;
             }
         }
 
-        visited[course] = 2;
+        visited[course] = false;
+        memo[course] = true;
 
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {

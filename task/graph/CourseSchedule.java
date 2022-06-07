@@ -5,20 +5,20 @@ import java.util.List;
 
 public class CourseSchedule {
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
-        var courses = new ArrayList<List<Integer>>();
-
+        var graphCourses = new ArrayList<List<Integer>>(numCourses);
         for (int i = 0; i < numCourses; i++) {
-            courses.add(new ArrayList<>(2));
+            graphCourses.add(new ArrayList<>(2));
         }
 
         for (int[] prerequisite : prerequisites) {
-            courses.get(prerequisite[1]).add(prerequisite[0]);
+            graphCourses.get(prerequisite[1]).add(prerequisite[0]);
         }
 
         var visited = new boolean[numCourses];
         var memo = new boolean[numCourses];
+
         for (int i = 0; i < numCourses; i++) {
-            if (!dfs(courses, visited, memo, i)) {
+            if (!dfs(graphCourses, visited, memo, i)) {
                 return false;
             }
         }
@@ -26,7 +26,7 @@ public class CourseSchedule {
         return true;
     }
 
-    public static boolean dfs(List<List<Integer>> courses, boolean[] visited, boolean[] memo, int course) {
+    private static boolean dfs(List<List<Integer>> courses, boolean[] visited, boolean[] memo, int course) {
         if (visited[course]) return false;
         if (memo[course]) return true;
 
@@ -37,7 +37,6 @@ public class CourseSchedule {
                 return false;
             }
         }
-
         visited[course] = false;
         memo[course] = true;
 

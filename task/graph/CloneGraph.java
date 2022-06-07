@@ -9,11 +9,11 @@ public class CloneGraph {
     public static Node cloneGraph(Node node) {
         if (node == null) return null;
 
-        var clone = new Node(node.val);
-        Queue<Node> queue = new LinkedList<>();
+        var newNode = new Node(node.val);
         var map = new HashMap<Integer, Node>();
-        map.put(clone.val, clone);
+        map.put(newNode.val, newNode);
 
+        Queue<Node> queue = new LinkedList<>();
         queue.add(node);
 
         while (!queue.isEmpty()) {
@@ -24,11 +24,10 @@ public class CloneGraph {
                     map.put(neighbor.val, new Node(neighbor.val));
                 }
 
-                map.get(currentNode.val)
-                        .neighbors.add(map.get(neighbor.val));
+                map.get(currentNode.val).neighbors.add(map.get(neighbor.val));
             }
         }
 
-        return clone;
+        return newNode;
     }
 }

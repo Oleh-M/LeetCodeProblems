@@ -13,7 +13,6 @@ public class DecodeWays {
             if (oneDigit > 0) {
                 dp[i] += dp[i - 1];
             }
-
             if (twoDigits >= 10 && twoDigits <= 26) {
                 dp[i] += dp[i - 2];
             }
@@ -23,6 +22,8 @@ public class DecodeWays {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(numDecodings("12"));
+        System.out.println(numDecodings("226"));
+        System.out.println(numDecodings("06"));
     }
 }

@@ -5,22 +5,20 @@ import java.util.List;
 
 public class PacificAtlanticWaterFlow {
     public static List<List<Integer>> pacificAtlantic(int[][] heights) {
-        var row = heights.length;
-        var col = heights[0].length;
+        int row = heights.length;
+        int col = heights[0].length;
 
         var pacific = new boolean[row][col];
         var atlantic = new boolean[row][col];
 
-        // left right
-        for (int i = 0; i < row; i++) {
-            dfs(heights, i, 0, heights[i][0], pacific);
-            dfs(heights, i, col - 1, heights[i][col - 1], atlantic);
+        for (int i = 0; i < col; i++) {
+            dfs(heights, 0, i, heights[0][i], pacific); // pacific top left to right
+            dfs(heights, row - 1, i, heights[row - 1][i], atlantic); // atlantic bottom left to right
         }
 
-        // top bottom
-        for (int i = 0; i < col; i++) {
-            dfs(heights, 0, i, heights[0][i], pacific);
-            dfs(heights, row - 1, i, heights[row - 1][i], atlantic);
+        for (int i = 0; i < row; i++) {
+            dfs(heights, i, 0, heights[i][0], pacific); // rightmost pacific top to bottom
+            dfs(heights, i, col - 1, heights[i][col - 1], atlantic); // leftmost atlantic top to bottom
         }
 
         var result = new ArrayList<List<Integer>>();
@@ -35,24 +33,26 @@ public class PacificAtlanticWaterFlow {
         return result;
     }
 
-    public static void dfs(int[][] heights,
-                           int r, int c,
-                           int prevHeight,
-                           boolean[][] visited) {
+    private static void dfs(int[][] input, int r, int c, int prevHeight, boolean[][] visited) {
         if (r < 0 || c < 0
-                || r >= heights.length
-                || c >= heights[0].length
-                || prevHeight > heights[r][c]
+                || c >= input[0].length || r >= input.length
+                || prevHeight > input[r][c]
                 || visited[r][c]) return;
 
         visited[r][c] = true;
-        dfs(heights, r - 1, c, heights[r][c], visited);
-        dfs(heights, r + 1, c, heights[r][c], visited);
-        dfs(heights, r, c - 1, heights[r][c], visited);
-        dfs(heights, r, c + 1, heights[r][c], visited);
+        dfs(input, r - 1, c, input[r][c], visited);
+        dfs(input, r, c - 1, input[r][c], visited);
+        dfs(input, r + 1, c, input[r][c], visited);
+        dfs(input, r, c + 1, input[r][c], visited);
     }
 
     public static void main(String[] args) {
-
+        System.out.println(pacificAtlantic(new int[][]{
+                {1, 2, 2, 3, 5},
+                {3, 2, 3, 4, 4},
+                {2, 4, 5, 3, 1},
+                {6, 7, 1, 4, 5},
+                {5, 1, 1, 2, 4}
+        }));
     }
 }

@@ -29,12 +29,12 @@ public class MeetingRooms2 {
         var endRanges = intervals.stream().map(a -> a.end).sorted().toArray(Integer[]::new);
 
         int s = 0, e = 0;
-        int counter = 0, result = 0;
+        int result = 0, counter = 0;
 
         while (s < intervals.size()) {
             if (startRanges[s] < endRanges[e]) {
-                counter++;
                 s++;
+                counter++;
             } else {
                 e++;
                 counter--;

@@ -1,4 +1,4 @@
-package inplacereversal;
+package linkedlist;
 
 import fastandslowpointers.addTwoNumbers.ListNode;
 

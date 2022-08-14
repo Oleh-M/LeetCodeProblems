@@ -1,4 +1,4 @@
-package inplacereversal;
+package linkedlist;
 
 import fastandslowpointers.addTwoNumbers.ListNode;
 
@@ -14,15 +14,14 @@ public class ReverseLinkedList {
     public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head;
 
-        ListNode prev = null, curr = head;
-
-        while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        ListNode result = null;
+        while (head != null) {
+            var tmp = result;
+            result = head;
+            head = head.next;
+            result.next = tmp;
         }
 
-        return prev;
+        return result;
     }
 }

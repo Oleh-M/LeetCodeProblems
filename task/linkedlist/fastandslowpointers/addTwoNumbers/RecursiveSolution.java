@@ -1,4 +1,6 @@
-package fastandslowpointers.addTwoNumbers;
+package linkedlist.fastandslowpointers.addTwoNumbers;
+
+import linkedlist.ListNode;
 
 /**
  * Definition for singly-linked list.

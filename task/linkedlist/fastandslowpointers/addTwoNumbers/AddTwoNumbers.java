@@ -1,4 +1,6 @@
-package fastandslowpointers.addTwoNumbers;
+package linkedlist.fastandslowpointers.addTwoNumbers;
+
+import linkedlist.ListNode;
 
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

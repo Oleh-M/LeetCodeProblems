@@ -1,7 +1,5 @@
 package linkedlist;
 
-import fastandslowpointers.addTwoNumbers.ListNode;
-
 public class MergeTwoSortedLists {
 
     public static void main(String[] args) {

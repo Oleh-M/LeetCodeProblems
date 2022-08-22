@@ -1,7 +1,5 @@
 package linkedlist;
 
-import fastandslowpointers.addTwoNumbers.ListNode;
-
 public class ReverseLinkedList {
     public static void main(String[] args) {
         ListNode listNode = reverseList(
@@ -16,10 +14,10 @@ public class ReverseLinkedList {
 
         ListNode result = null;
         while (head != null) {
-            var tmp = result;
+            var tmp = head.next;
+            head.next = result;
             result = head;
-            head = head.next;
-            result.next = tmp;
+            head = tmp;
         }
 
         return result;

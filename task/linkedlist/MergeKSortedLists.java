@@ -1,7 +1,5 @@
 package linkedlist;
 
-import fastandslowpointers.addTwoNumbers.ListNode;
-
 import java.util.ArrayList;
 
 public class MergeKSortedLists {

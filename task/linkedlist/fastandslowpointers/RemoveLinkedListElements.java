@@ -1,6 +1,6 @@
-package fastandslowpointers;
+package linkedlist.fastandslowpointers;
 
-import fastandslowpointers.addTwoNumbers.ListNode;
+import linkedlist.ListNode;
 
 public class RemoveLinkedListElements {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package fastandslowpointers;
+package linkedlist.fastandslowpointers;
 
-import fastandslowpointers.addTwoNumbers.ListNode;
+import linkedlist.ListNode;
 
 public class LinkedListCycle2 {
     public static void main(String[] args) {

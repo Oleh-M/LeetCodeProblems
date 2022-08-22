@@ -1,4 +1,4 @@
-package fastandslowpointers.addTwoNumbers;
+package linkedlist;
 
 public class ListNode {
     public int val;

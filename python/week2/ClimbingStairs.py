@@ -1,18 +1,12 @@
 class Solution:
-    # TODO Fibonacci numbers solution
     def climbStairs(self, n: int) -> int:
-        def climb(n: int, one_or_two: int, counter: int) -> int:
-            if n - one_or_two == 0:
-                return counter + 1
-            else:
-                return counter + climb(n - one_or_two, one_or_two, counter + 1)
-
-        counter = 0
-        counter += climb(n, 1, 0)
-        counter += climb(n, 2, 0)
-        return counter
-
-
+        one = 1
+        two = 1
+        for i in range(n):
+            temp = one
+            one = one + two
+            two = temp
+        return one
 
 
 if __name__ == '__main__':
